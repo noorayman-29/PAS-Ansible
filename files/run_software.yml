@@ -8,9 +8,9 @@
 
     # Software
     software_pkg_state:
-      server: check
-      agent: check
-      plugin: check
+      # server: check
+      agent: present
+      plugin: present
 
     # Directories
     software_dir: "agent"
@@ -23,6 +23,15 @@
     # Reports
     software_reports_generate: true
     software_reports_backup: true
+    software_reports_details_format: json
+    software_reports_host: '192.168.0.138'
+    
+    software_reports:
+  - src:  software_report.csv.j2
+    dest: /tmp/software_report.csv
+  - src:  software_report.html.j2
+    dest: /tmp/software_report.html
+
 
   roles:
     - name: oneidentity.privilege_manager.software
