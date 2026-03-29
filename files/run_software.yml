@@ -11,7 +11,7 @@
       # plugin: present
 
     # Directories
-    software_dir: "agent"
+    software_dir: "./files/7.4.0.11"
     software_tmp_dir: /tmp/1id
 
     # Facts
