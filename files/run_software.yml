@@ -1,16 +1,14 @@
 ---
-
 - hosts: all
   gather_facts: false
 
-  # The variables you would most likely want/need to override have been included
   vars:
 
     # Software
     software_pkg_state:
       # server: check
       agent: present
-      plugin: present
+      # plugin: present
 
     # Directories
     software_dir: "agent"
@@ -24,14 +22,13 @@
     software_reports_generate: true
     software_reports_backup: true
     software_reports_details_format: json
-    software_reports_host: '192.168.0.138'
-    
-    software_reports:
-  - src:  software_report.csv.j2
-    dest: /tmp/software_report.csv
-  - src:  software_report.html.j2
-    dest: /tmp/software_report.html
+    software_reports_host: "192.168.0.138"
 
+    software_reports:
+      - src: software_report.csv.j2
+        dest: /tmp/software_report.csv
+      - src: software_report.html.j2
+        dest: /tmp/software_report.html
 
   roles:
     - name: oneidentity.privilege_manager.software
