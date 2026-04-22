@@ -1,0 +1,36 @@
+---
+
+- hosts: all
+  gather_facts: false
+
+  # The variables you would most likely want/need to override have been included
+  vars:
+
+    # Join
+    #join_server: 10.10.10.10
+
+    # Preflight
+    preflight_mode: server
+    preflight_verbose: true
+    preflight_extra_args: ''
+
+    # Directories
+    software_dir: "files"
+    software_tmp_dir: /tmp/1id
+
+    # Facts
+    preflight_facts_generate: true
+    preflight_facts_verbose: true
+
+    # Reports
+    preflight_reports_generate: true
+    preflight_reports_backup: true
+    preflight_reports_host: 192.1680.123
+    preflight_reports:
+    - src:  preflight_report.csv.j2
+      dest: /home/reports/preflight_report.csv
+    - src:  preflight_report.html.j2
+      dest: /home/reports/preflight_report.html
+
+  roles:
+    - name: oneidentity.privilege_manager.preflight
