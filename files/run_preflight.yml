@@ -7,10 +7,10 @@
   vars:
 
     # Join
-    #join_server: 10.10.10.10
+    join_server: 192.168.0.122
 
     # Preflight
-    preflight_mode: server
+    preflight_mode: pmpolicy
     preflight_verbose: true
     preflight_extra_args: ''
 
