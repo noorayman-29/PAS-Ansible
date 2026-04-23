@@ -6,8 +6,7 @@
 
     # Software
     software_pkg_state:
-      server: absent
-      #agent: present
+      agent: present
       #plugin: present
 
     # Directories
