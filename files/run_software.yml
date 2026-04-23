@@ -6,8 +6,9 @@
 
     # Software
     software_pkg_state:
+      server: absent
       #agent: present
-      plugin: present
+      #plugin: present
 
     # Directories
     software_dir: "7.4.0.11"
