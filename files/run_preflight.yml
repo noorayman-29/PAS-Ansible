@@ -25,12 +25,12 @@
     # Reports
     preflight_reports_generate: true
     preflight_reports_backup: true
-    preflight_reports_host: 192.1680.123
-    preflight_reports:
-    - src:  preflight_report.csv.j2
-      dest: /home/reports/preflight_report.csv
-    - src:  preflight_report.html.j2
-      dest: /home/reports/preflight_report.html
+    #preflight_reports_host: 192.1680.123
+    #preflight_reports:
+    #- src:  preflight_report.csv.j2
+     # dest: /home/reports/preflight_report.csv
+    #- src:  preflight_report.html.j2
+     # dest: /home/reports/preflight_report.html
 
   roles:
     - name: oneidentity.privilege_manager.preflight
