@@ -6,7 +6,7 @@
   vars:
 
     # Join
-    join_server: 192.168.0.136
+    join_server: 192.168.0.122
     join_state: joined
     join_password: Admin123
     join_extra_args: ''
@@ -18,16 +18,12 @@
     # Reports
     join_reports_generate: true
     join_reports_backup: true
-    software_reports_generate: true
-    software_reports_backup: true
-    software_reports_details_format: json
-    software_reports_host: "192.168.0.138"
-
-    software_reports:
-      - src: software_report.csv.j2
-        dest: /tmp/software_report.csv
-      - src: software_report.html.j2
-        dest: /tmp/software_report.html
+    join_reports_host: 192.168.0.123
+    join_reports:
+    - src:  join_report.csv.j2
+      dest: /home/reports/pas_join_report.csv
+    - src:  join_report.html.j2
+      dest: /home/reports/pas_join_report.html
 
   roles:
     - name: oneidentity.privilege_manager.join
