@@ -15,7 +15,7 @@
     preflight_extra_args: ''
 
     # Directories
-    software_dir: "files/server"
+    software_dir: "7.4.0.11"
     software_tmp_dir: /tmp/1id
 
     # Facts
@@ -25,12 +25,12 @@
     # Reports
     preflight_reports_generate: true
     preflight_reports_backup: true
-    #preflight_reports_host: 192.1680.123
-    #preflight_reports:
-    #- src:  preflight_report.csv.j2
-     # dest: /home/reports/preflight_report.csv
-    #- src:  preflight_report.html.j2
-     # dest: /home/reports/preflight_report.html
+    preflight_reports_host: 192.1680.123
+    preflight_reports:
+    - src:  preflight_report.csv.j2
+      dest: /home/reports/preflight_report.csv
+    - src:  preflight_report.html.j2
+      dest: /home/reports/preflight_report.html
 
   roles:
     - name: oneidentity.privilege_manager.preflight
