@@ -7,7 +7,7 @@
 
     # Join
     join_server: 192.168.0.122
-    join_state: unjoined
+    join_state: joined
     join_password: Admin123
     join_extra_args: ''
 
