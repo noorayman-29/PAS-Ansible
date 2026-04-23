@@ -1,0 +1,30 @@
+---
+- hosts: all
+  gather_facts: false
+
+  vars:
+
+    # Software
+    software_pkg_state:
+      server: present
+
+    # Directories
+    software_dir: "7.4.0.11"
+    software_tmp_dir: /tmp/1id
+
+    # Facts
+    software_facts_generate: true
+    software_facts_verbose: false
+
+    # Reports
+    software_reports_generate: true
+    software_reports_backup: true
+    software_reports_host: 192.168.0.123
+    software_reports:
+      - src: software_report.csv.j2
+        dest: /home/reports/server_software_report.csv
+      - src: software_report.html.j2
+        dest: /home/reports/server_software_report.html
+
+  roles:
+    - name: oneidentity.privilege_manager.software
