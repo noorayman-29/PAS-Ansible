@@ -15,7 +15,7 @@
     preflight_extra_args: ''
 
     # Directories
-    software_dir: "files"
+    software_dir: "files/server"
     software_tmp_dir: /tmp/1id
 
     # Facts
