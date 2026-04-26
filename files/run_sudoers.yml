@@ -14,7 +14,13 @@
 
     # Reports
     sudoers_reports_generate: true
-    sudoers_reports_backup: false
+    sudoers_reports_backup: true
+    sudoers_reports_host: 192.168.0.123
+    sudoers_reports:
+    - src:  sudoers_report.csv.j2
+      dest: /home/reports/sudoers_report.csv
+    - src:  sudoers_report.html.j2
+      dest: /home/reports/sudoers_report.html
 
   roles:
     - name: oneidentity.privilege_manager.sudoers
