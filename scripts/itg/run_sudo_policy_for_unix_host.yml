@@ -1,0 +1,23 @@
+---
+
+- hosts: managed_pas_hosts
+  gather_facts: false
+
+  # The variables you would most likely want/need to override have been included
+  vars:
+
+    # Facts
+    sudo_policy_for_unix_host_facts_generate: true
+
+    # Reports
+    sudo_policy_for_unix_host_reports_generate: true
+    sudo_policy_for_unix_host_reports_backup: true
+    sudo_policy_for_unix_host_reports_host: awx-itg
+    sudo_policy_for_unix_host_reports:
+    - src:  sudo_policy_for_unix_host_report.csv.j2
+      dest: /home/reports/pas/sudo_policy_for_unix_host_report.csv
+    - src:  sudo_policy_for_unix_host_report.html.j2
+      dest: /home/reports/pas/sudo_policy_for_unix_host_report.html
+
+  roles:
+    - name: oneidentity.privilege_manager.sudo_policy_for_unix_host
