@@ -6,7 +6,7 @@
   vars:
 
     # Join
-    join_server: 192.168.0.122
+    join_server: ubuntu-pas-pm
     join_state: joined
     join_password: Admin123
     join_extra_args: ''
@@ -18,12 +18,12 @@
     # Reports
     join_reports_generate: true
     join_reports_backup: true
-    join_reports_host: 192.168.0.123
+    join_reports_host: awx-itg
     join_reports:
     - src:  join_report.csv.j2
-      dest: /home/reports/pas_join_report.csv
+      dest: /home/reports/pas/pas_join_report.csv
     - src:  join_report.html.j2
-      dest: /home/reports/pas_join_report.html
+      dest: /home/reports/pas/pas_join_report.html
 
   roles:
     - name: oneidentity.privilege_manager.join
