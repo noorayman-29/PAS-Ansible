@@ -1,0 +1,36 @@
+---
+
+- hosts: pas_pm_server
+  gather_facts: false
+
+  # The variables you would most likely want/need to override have been included
+  vars:
+
+    # Join
+    #join_server: 192.168.0.122
+
+    # Preflight
+    preflight_mode: server
+    preflight_verbose: true
+    preflight_extra_args: ''
+
+    # Directories
+    software_dir: "7.4.0.11"
+    software_tmp_dir: /tmp/1id
+
+    # Facts
+    preflight_facts_generate: true
+    preflight_facts_verbose: true
+
+    # Reports
+    preflight_reports_generate: true
+    preflight_reports_backup: true
+    preflight_reports_host: awx-itg
+    preflight_reports:
+    - src:  preflight_report.csv.j2
+      dest: /home/reports/pas/server_preflight_report.csv
+    - src:  preflight_report.html.j2
+      dest: /home/reports/pas/server_preflight_report.html
+
+  roles:
+    - name: oneidentity.privilege_manager.preflight
