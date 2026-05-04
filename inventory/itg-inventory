@@ -1,0 +1,31 @@
+all:
+  hosts:
+    ubuntu-host-1:
+      ansible_host: 192.168.0.127
+
+    ubuntu-host-2:
+      ansible_host: 192.168.0.129
+
+    ubuntu-pas-pm:
+      ansible_host: 192.168.0.130
+
+    awx-itg:
+      ansible_host: 192.168.0.128
+     
+
+  children:
+    managed_sas_hosts:
+      hosts:
+        ubuntu-host-1:
+        ubuntu-host-2:
+        ubuntu-pas-pm:
+        awx-itg:
+
+    managed_pas_hosts:
+      hosts:
+        ubuntu-host-1:
+        ubuntu-host-2:
+
+    pas_pm_server:
+      hosts:
+        ubuntu-pas-pm:
