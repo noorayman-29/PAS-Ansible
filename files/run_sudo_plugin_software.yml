@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: managed_pas_hosts
   gather_facts: false
 
   vars:
@@ -20,12 +20,12 @@
     # Reports
     software_reports_generate: true
     software_reports_backup: true
-    software_reports_host: 192.168.0.123
+    software_reports_host: awx-itg
     software_reports:
       - src: software_report.csv.j2
-        dest: /home/reports/software_report.csv
+        dest: /home/reports/pas/host_software_report.csv
       - src: software_report.html.j2
-        dest: /home/reports/software_report.html
+        dest: /home/reports/pas/host_software_report.html
 
   roles:
     - name: oneidentity.privilege_manager.software
